@@ -1,0 +1,9 @@
+ng generate component HeroDetail
+ng generate class hero
+
+mkdir servicesでフォルダを作成したあと、
+system-config.tsに追加したフォルダの名前を追加
+https://github.com/Microsoft/TypeScript-Sublime-Plugin/issues/470
+
+
+
