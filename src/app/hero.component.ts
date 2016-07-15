@@ -5,13 +5,13 @@ import {HeroService} from './services/hero.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
+  selector: 'hero-root',
+  templateUrl: 'hero.component.html',
+  styleUrls: ['hero.component.css'],
   directives: [HeroDetailComponent],
   providers: [HeroService]
 })
-export class AppComponent {
+export class HeroComponent {
   title = 'Tour of Heroes';
   selectedHero: Hero;
   heroes :Hero[];
