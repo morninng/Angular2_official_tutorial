@@ -1,4 +1,6 @@
-import { Component, OnInit , Input } from '@angular/core';
+import { Component, OnInit , Input , OnDestroy  } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HeroService } from './../services/hero.service';
 import { Hero } from './../hero';
 
 
@@ -8,13 +10,27 @@ import { Hero } from './../hero';
   templateUrl: 'hero-detail.component.html',
   styleUrls: ['hero-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
+export class HeroDetailComponent implements OnInit, OnDestroy {
 
-  @Input()
   hero: Hero;
+  sub: any;
 
-  constructor() {}
+
+  constructor( private heroService: HeroService, private route: ActivatedRoute) {}
   ngOnInit() {
+    this.sub = this.route.params.subscribe(params =>{
+      let id = +params['id'];
+      this.heroService.getHero(id)
+        .then(hero => this.hero = hero);
+
+    })
+  }
+  ngOnDestroy(){
+    this.sub.unsubscribe();
+  }
+
+  goBack(){
+    window.history.back();
   }
 
 }

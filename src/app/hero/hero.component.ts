@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Hero } from './../hero';
 import { HeroDetailComponent } from './../hero-detail/hero-detail.component';
 import {HeroService} from './../services/hero.service';
+import { Router } from '@angular/router'
 
 @Component({
   moduleId: module.id,
@@ -16,7 +17,7 @@ export class HeroComponent {
   heroes :Hero[];
 
 
-  constructor( private heroService: HeroService){
+  constructor( private router: Router, private heroService: HeroService){
 
   }
 
@@ -28,6 +29,10 @@ export class HeroComponent {
     this.heroService.getHeroesSlowly().then(
       heroes => this.heroes = heroes
     );
+  }
+
+  gotoDetail(){
+    this.router.navigate(['/detail', this.selectedHero.id]);
   }
 
   onSelect(hero: Hero) { this.selectedHero = hero; }
