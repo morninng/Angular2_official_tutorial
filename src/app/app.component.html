@@ -1,4 +1,7 @@
 <div>
   <h1>{{title}}</h1>
-  <hero-root></hero-root>
+  <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
+  <a [routerLink]="['/heroes']" routerLinkActive="active">Heroes</a>
+  <router-outlet></router-outlet>
+  
 </div>

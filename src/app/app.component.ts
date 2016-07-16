@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HeroComponent} from './hero/hero.component';
 import {HeroService} from './services/hero.service';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 
 @Component({
@@ -8,7 +9,7 @@ import {HeroService} from './services/hero.service';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives:[HeroComponent],
+  directives:[ ROUTER_DIRECTIVES],
   providers:[HeroService]
 })
 export class AppComponent implements OnInit {

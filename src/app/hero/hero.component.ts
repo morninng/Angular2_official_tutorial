@@ -8,11 +8,10 @@ import {HeroService} from './../services/hero.service';
   selector: 'hero-root',
   templateUrl: 'hero.component.html',
   styleUrls: ['hero.component.css'],
-  directives: [HeroDetailComponent],
-  providers: [HeroService]
+  directives: [HeroDetailComponent]
 })
 export class HeroComponent {
-  title = 'Tour of Heroes';
+  title = 'hero component';
   selectedHero: Hero;
   heroes :Hero[];
 
