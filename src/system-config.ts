@@ -30,6 +30,7 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+//  'angular2-in-memory-web-api',
 
   // App specific barrels.
   'app',

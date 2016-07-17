@@ -26,7 +26,7 @@ export class HeroComponent {
   }
 
   getHeroes() {
-    this.heroService.getHeroesSlowly().then(
+    this.heroService.getHeroes().then(
       heroes => this.heroes = heroes
     );
   }
